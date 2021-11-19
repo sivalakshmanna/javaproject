@@ -11,7 +11,7 @@ pipeline{
                // println "${BRANCH}"
                 sh "ls -l"
                 sh "ls -lart ./*"
-                git branch: "${BRANCH_NAME}"
+                git branch: "${BRANCH_NAME}",
                 url: 'https://github.com/sivalakshmanna/boxfuse-sample-java-war-hello.git'
             }
         }
