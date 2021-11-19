@@ -25,7 +25,8 @@ pipeline{
         stage("upload artifacts to s3"){
             steps{
                 println "uploading artifacts to s3 bucket"
-                
+                sh "aws s3 cp target/*.war s3://sivabandela/$JOB_NAME/${BRANCH_NAME}/$BUILD_NUMBER/"
+
             }
         }
     }
