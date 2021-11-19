@@ -7,12 +7,12 @@ pipeline{
         stage("checkout code"){
             steps{
                 println "clone our code to our repository"
-                println $BRANCH
-                println "${BRANCH}"
+              // println $BRANCH
+               // println "${BRANCH}"
                 sh "ls -l"
-                checkout([$class: 'GitSCM', branches: [[name: '*/"$BRANCH"']], userRemoteConfigs: [[ url: 'https://github.com/sivalakshmanna/boxfuse-sample-java-war-hello.git']]])
                 sh "ls -lart ./*"
-
+                git branch: "${BRANCH_NAME}"
+                url: 'https://github.com/sivalakshmanna/boxfuse-sample-java-war-hello.git'
             }
         }
         stage("build code"){
