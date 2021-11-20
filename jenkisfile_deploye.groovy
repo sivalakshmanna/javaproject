@@ -1,8 +1,8 @@
 pipeline{
     agent any 
     parameters {
-        stringname(name: 'BRANCH_NAME', defaultvalue: 'master', description: 'From which branch artifacts want to deploy?')
-        stringname(name: 'BUILD_NUM', defaultvalue: '', description: 'From which build number artifacts want to deploy?')
+        string(name: 'BRANCH_NAME', defaultvalue: 'master', description: 'From which branch artifacts want to deploy?')
+        string(name: 'BUILD_NUM', defaultvalue: '', description: 'From which build number artifacts want to deploy?')
     }
     stages{
         stage("download artifacts"){
