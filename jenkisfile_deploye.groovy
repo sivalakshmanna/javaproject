@@ -11,7 +11,7 @@ pipeline{
                 sh """
                        aws s3 ls
                        aws s3 ls s3://sivabandela
-                       aws s3 ls s3://sivabandela/${BRANCH_NAME}/${BUILD_NUM}/
+                       aws s3 cp s3://sivabandela/${BRANCH_NAME}/${BUILD_NUM}/
                    """
                        
             }
